@@ -116,3 +116,33 @@ function displayFamily() {
     document.getElementById("start-seq").innerHTML = "My Fam " + family.join(", ");
 }
 
+// anagram test
+// Write a function that takes in two words and see if they are anagrams
+
+function anagramTest(word1, word2){
+    let firstWord = [...word1];
+    let secondWord = [...word2];
+    let difference = 0;
+
+    if (firstWord.length === secondWord.length){
+        for ( let letter of firstWord ){
+            if( secondWord.includes(letter) ){
+
+            } else {
+                difference++;
+            }
+        }
+    } else {
+        difference++
+    }
+
+    if ( difference === 0 ){
+        console.log('its an anagram!');
+    } else {
+        console.log("not an anagram");
+    }
+}
+
+anagramTest('Fast', 'Fats');
+anagramTest('Fast', 'Feast');
+anagramTest('Fast', 'Race');
