@@ -51,3 +51,68 @@ invertTree(root);
 
 // array sorting and inverting
 
+let arr = [5, 5, 5, 7, 3, 5, 8, 2, 9, 7, 4, 14, 71, 45, 71]
+let dupe = []
+let single = []
+let indexes = []
+
+arrySort(arr);
+
+function arrySort(array){
+    // sorts array from smallest to largest
+    let temp = array.sort(function(a,b){return a-b})
+
+    // finds al numbers that are duplicated
+    const filtered = arr.filter((item, index) => arr.indexOf(item) !== index);
+    // removes duplicates of duplicates
+    let dupesArray = [...new Set(filtered)];
+
+    // gets the numbers that are duplicated into dupe array
+    for ( let num of dupesArray) {
+        let number = num;
+        for (let i=0; i<temp.length; i++){
+            if (number === temp[i]){
+                dupe.push(temp[i]);
+            }
+        }
+    }
+    // gets single numbers into single array
+    for( let num of temp ){
+        let number = num
+        if (dupesArray.includes(number)){
+
+        } else {
+            single.push(number)
+        }
+    }
+    // combines both arrays
+    console.log('final', [...dupe,...single]);
+}
+
+fizzBuzz(15);
+
+const family = ['Justin', 'Natalie', 'Bentley'];
+
+function fizzBuzz(n) {
+    console.log('hacker');
+    // Write your code here
+    for ( let i=1; i<n.length; i++){
+        if(i%3===0 && i%5===0){
+            console.log('FizzBuzz')
+        } else if (i%3===0){
+            console.log('Fizz')
+        } else if (i%5===0){
+            console.log('Buzz')
+        } else {
+            console.log(i)
+        }
+    }
+}
+
+displayFamily(family);
+
+function displayFamily(family) {
+    console.log('my family', family);
+    document.getElementById("fam-list").innerHTML = "my fam";
+}
+
