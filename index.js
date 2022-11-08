@@ -109,10 +109,10 @@ function fizzBuzz(n) {
     }
 }
 
-displayFamily(family);
+setTimeout(displayFamily, 100)
 
-function displayFamily(family) {
+function displayFamily() {
     console.log('my family', family);
-    document.getElementById("fam-list").innerHTML = "my fam";
+    document.getElementById("start-seq").innerHTML = "My Fam " + family.join(", ");
 }
 
