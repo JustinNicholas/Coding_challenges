@@ -155,3 +155,20 @@ function taxCalc(amount, tax) {
 }
 
 taxCalc(100,.075);
+
+
+// remove spaces in a string
+
+function removeSapce(string) {
+    let array = [...string];
+
+    for( let i=array.length-1; i>=0; i--){
+        console.log(array[i]);
+        if(array[i] === ' '){
+            array.splice(i, 1)
+        }
+    }
+    console.log('string with no spaces =', array.join(''));
+}
+
+removeSapce('the quick dog');
