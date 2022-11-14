@@ -146,3 +146,12 @@ function anagramTest(word1, word2){
 anagramTest('Fast', 'Fats');
 anagramTest('Fast', 'Feast');
 anagramTest('Fast', 'Race');
+
+//Write a function that takes in a dollar amount and tax percentage and returns the total.
+
+function taxCalc(amount, tax) {
+    let newAmount = amount + (amount*tax);
+    console.log("your new total is", newAmount);
+}
+
+taxCalc(100,.075);
